@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Agent : MonoBehaviour
-{
+public class Agent : MonoBehaviour{
+
+    public float speed = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +13,23 @@ public class Agent : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+
+        Vector3 pos = transform.position;
+
+        if(Input.GetKey("s")) {
+            pos.z += speed * Time.deltaTime;
+        }
+        if (Input.GetKey("w")) {
+            pos.z -= speed * Time.deltaTime;
+        }
+        if (Input.GetKey("a")) {
+            pos.x += speed * Time.deltaTime;
+        }
+        if (Input.GetKey("d")) {
+            pos.x -= speed * Time.deltaTime;
+        }
+
+        transform.position = pos;
     }
 }
