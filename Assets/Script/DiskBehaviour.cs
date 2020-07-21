@@ -8,17 +8,19 @@ public class DiskBehaviour : MonoBehaviour{
     public Transform agent1;
     public Transform agent2;
 
+
     private Vector3 direction;
     private Rigidbody rg;
     private Vector3 destination;
     private Vector3 normal = Vector3.zero;
     private Vector3 lastHittedPoint;
-    private bool haveILose = false;
+    public bool haveILose = false;
     
     void Start(){
         rg = GetComponent<Rigidbody>();
-        destination = agent1.position;
-        rg.velocity = destination.normalized * speed;
+        //destination = agent1.position;
+        //rg.velocity = destination.normalized * speed;
+        rg.velocity = Vector3.forward * 8;
     }
 
     void Update() {
@@ -47,19 +49,19 @@ public class DiskBehaviour : MonoBehaviour{
 
             rg.velocity = destination.normalized * speed;
 
-            Debug.Log(rg.velocity);
+            //Debug.Log(rg.velocity);
         }
     }
 
     private void OnTriggerEnter(Collider other) {
         haveILose = true;
-        Debug.Log(haveILose);
+        //Debug.Log(haveILose);
     }
 
     private void OnDrawGizmos() {
-        Gizmos.color = Color.white;
+        /*Gizmos.color = Color.white;
         Gizmos.DrawLine(transform.position, normal);
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, destination);
+        Gizmos.DrawLine(transform.position, destination);*/
     }
 }
