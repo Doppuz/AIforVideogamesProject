@@ -7,6 +7,7 @@ public class BAgent : Agent{
 
     public GameObject hockeyDisk;
     public GameObject field;
+    public float agentSpeed = 8f;
 
     private Rigidbody diskRB;
     private GameObject leftSideGO;
@@ -59,11 +60,14 @@ public class BAgent : Agent{
     public override void OnActionReceived(float[] vectorAction) {
         /*localAgent.GetComponent<Rigidbody>().MovePosition(localAgent.transform.position +
             new Vector3(vectorAction[0], localAgent.transform.position.y, localAgent.transform.position.z).normalized * 5 * Time.deltaTime);*/
-        localAgent.GetComponent<Rigidbody>().velocity = new Vector3(vectorAction[0], localAgent.transform.position.y, localAgent.transform.position.z).normalized * 5;
+        //localAgent.GetComponent<Rigidbody>().velocity = new Vector3(vectorAction[0], localAgent.transform.position.y, localAgent.transform.position.z).normalized * 5;
+        localAgent.GetComponent<Rigidbody>().AddForce(new Vector3(vectorAction[0], localAgent.transform.position.y,
+            localAgent.transform.position.z).normalized * 13f,
+            ForceMode.VelocityChange);
         if (hockeyDisk.GetComponent<DiskBehaviour>().haveILose == false) {
             SetReward(0.05f);
         } else {
-            SetReward(-1f);
+            SetReward(-5f);
             EndEpisode();
         }
     }

@@ -42,9 +42,12 @@ public class DiskBehaviour : MonoBehaviour{
             // reflect our old velocity off the contact point's normal vector
             destination = Vector3.Reflect(transform.position, contact.normal);
 
-            destination = new Vector3(destination.x, transform.position.y, destination.z);
+            float rndX = Random.Range(-1,1);
+            float rndZ = Random.Range(-1, 1);
 
-            if(speed < 24)
+            destination = new Vector3(destination.x + rndX, transform.position.y, destination.z + rndZ);
+
+            if(speed < 18)
                 speed += 2f;
 
             rg.velocity = destination.normalized * speed;
