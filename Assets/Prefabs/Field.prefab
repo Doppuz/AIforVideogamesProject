@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 441487437}
   - component: {fileID: 441487436}
   - component: {fileID: 1845555856}
+  - component: {fileID: 1393547752610914926}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -159,6 +160,7 @@ MonoBehaviour:
   MaxStep: 3000
   hockeyDisk: {fileID: 8963397827783155744}
   field: {fileID: 4439936263199487900}
+  localAgent: {fileID: 0}
   agentSpeed: 8
 --- !u!114 &441487436
 MonoBehaviour:
@@ -175,6 +177,19 @@ MonoBehaviour:
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
 --- !u!114 &1845555856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441487433}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1b626cf449d7948bf4b0be75c50e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+--- !u!114 &1393547752610914926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -484,6 +499,7 @@ GameObject:
   - component: {fileID: 1887550150}
   - component: {fileID: 1887550151}
   - component: {fileID: 1226150298}
+  - component: {fileID: 5685637102492027580}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -596,6 +612,19 @@ SphereCollider:
   m_Radius: 0.7228731
   m_Center: {x: -0.030697823, y: 3.9847755, z: -0.000000059604645}
 --- !u!65 &1226150298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963397827783155744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5642211, y: 3.297338, z: 1.5690858}
+  m_Center: {x: 0.03446722, y: 0.64866906, z: -0.038666606}
+--- !u!65 &5685637102492027580
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

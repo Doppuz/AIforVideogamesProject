@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class DiskBehaviour : MonoBehaviour{
 
-    public float speed = 5f;
-    public Transform agent1;
-    public Transform agent2;
+    public float speed;
 
 
     private Vector3 direction;
@@ -37,22 +35,15 @@ public class DiskBehaviour : MonoBehaviour{
         if (collision.gameObject.tag == "Agent") {
             ContactPoint contact = collision.contacts[0];
 
-            normal = collision.contacts[0].normal;
-
             // reflect our old velocity off the contact point's normal vector
             destination = Vector3.Reflect(transform.position, contact.normal);
 
-            float rndX = Random.Range(-1,1);
-            float rndZ = Random.Range(-1, 1);
+            destination = new Vector3(destination.x, transform.localPosition.y, destination.z);
 
-            destination = new Vector3(destination.x + rndX, transform.position.y, destination.z + rndZ);
-
-            if(speed < 18)
-                speed += 2f;
+            //if (speed < 20)
+            //    speed += 2f;
 
             rg.velocity = destination.normalized * speed;
-
-            //Debug.Log(rg.velocity);
         }
     }
 
