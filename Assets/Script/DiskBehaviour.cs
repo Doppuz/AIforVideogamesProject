@@ -32,6 +32,7 @@ public class DiskBehaviour : MonoBehaviour{
     }
 
     private void OnCollisionEnter(Collision collision) {
+
         if (collision.gameObject.tag == "Agent") {
             ContactPoint contact = collision.contacts[0];
 
@@ -44,6 +45,8 @@ public class DiskBehaviour : MonoBehaviour{
             //    speed += 2f;
 
             rg.velocity = destination.normalized * speed;
+        } else {
+            Debug.Log("wtf "+ (collision.gameObject.tag));
         }
     }
 
