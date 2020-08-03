@@ -82,10 +82,15 @@ PrefabInstance:
     - target: {fileID: 1431058161, guid: 76e9cbc4a10af7e4fb290ff0f96f689e, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: bddeafceea7eddc41b07eec918adfa93,
+        type: 3}
     - target: {fileID: 1431058161, guid: 76e9cbc4a10af7e4fb290ff0f96f689e, type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431058161, guid: 76e9cbc4a10af7e4fb290ff0f96f689e, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1855120756, guid: 76e9cbc4a10af7e4fb290ff0f96f689e, type: 3}
       propertyPath: m_CollisionDetection
@@ -188,7 +193,7 @@ PrefabInstance:
     - target: {fileID: 7534712885564624042, guid: 76e9cbc4a10af7e4fb290ff0f96f689e,
         type: 3}
       propertyPath: speed
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7534712885564624042, guid: 76e9cbc4a10af7e4fb290ff0f96f689e,
         type: 3}

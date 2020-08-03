@@ -477,12 +477,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 10
+    VectorObservationSize: 9
     NumStackedVectorObservations: 1
     VectorActionSize: 01000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 7d805a9719f052c4fab2b3c3ac248ba6, type: 3}
+  m_Model: {fileID: 11400000, guid: 5a42f1f717d1c6942a1b71c30c8ddf28, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -945,7 +945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3927214871789387271}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.58, z: 4.46}
+  m_LocalPosition: {x: 0.009999995, y: 0.58, z: 4.460001}
   m_LocalScale: {x: 2, y: 1, z: 0.8999999}
   m_Children:
   - {fileID: 3927214871373190731}
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82ff533364681f489ab0476f20a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 22
+  speed: 13
   haveILose: 0
 --- !u!1 &3927214871937936793
 GameObject:
@@ -1261,12 +1261,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 10
+    VectorObservationSize: 9
     NumStackedVectorObservations: 1
     VectorActionSize: 01000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 7d805a9719f052c4fab2b3c3ac248ba6, type: 3}
+  m_Model: {fileID: 11400000, guid: 5a42f1f717d1c6942a1b71c30c8ddf28, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior

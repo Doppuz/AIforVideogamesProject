@@ -59,8 +59,7 @@ public class BAgent : Agent{
         //Debug.Log("DD "+diskRB.transform.localPosition);
         //sensor.AddObservation(diskRB.velocity.normalized * 22);
         //sensor.AddObservation(diskRB.velocity.normalized);
-        sensor.AddObservation(diskRB.velocity.normalized);
-        sensor.AddObservation((int)diskRB.velocity.magnitude);
+        sensor.AddObservation(diskRB.velocity);
     }
 
     public override void OnActionReceived(float[] vectorAction) {
@@ -98,7 +97,7 @@ public class BAgent : Agent{
             return new Vector3(rndPositionX, child.transform.localPosition.y, child.transform.localPosition.z);
         else {
             if(velocity)
-                rndPositionZ = Random.Range(1f, 4.5f);
+                rndPositionZ = Random.Range(1.2f, 4.5f);
             return new Vector3(rndPositionX, diskRB.transform.localPosition.y, rndPositionZ);
         }
     }
