@@ -30,29 +30,50 @@ public class DiskBehaviour : MonoBehaviour{
 
        
     }
+    
 
     private void OnCollisionEnter(Collision collision) {
 
         if (collision.gameObject.tag == "Agent") {
+            
+            //Debug.Log("22 "+rg.isKinematic);
+            //rg.isKinematic = true;
             ContactPoint contact = collision.contacts[0];
 
+            //          Debug.Log(contact.point+" "+contact.normal);
+
             // reflect our old velocity off the contact point's normal vector
-            destination = Vector3.Reflect(transform.position, contact.normal);
+                        //destination = Vector3.Reflect(transform.localPosition, contact.normal);
 
-            destination = new Vector3(destination.x, transform.localPosition.y, destination.z);
+                   //destination = new Vector3(destination.x, transform.localPosition.y, destination.z);
 
-            //if (speed < 20)
-            //    speed += 2f;
+            //           if (speed < 20)
+            //               speed += 2f;
 
-            rg.velocity = destination.normalized * speed;
+            //rg.MovePosition(transform.position + destination.normalized * 15);
+            //rg.velocity = destination.normalized * 22;
+            //rg.velocity = Vector3.Reflect(transform.position,
+            //                          collision.contacts[0].normal).normalized * 15;
+            rg.velocity = new Vector3(0f,0f,0f);
+            //rg.isKinematic = false;
+            float z = Random.Range(-2f, +2f);
+            Vector3 destination = Vector3.Reflect(transform.localPosition,
+                                      collision.contacts[0].normal) + new Vector3(0,0,z);
+            rg.AddForce(destination.normalized * speed,
+                       ForceMode.VelocityChange);
+
+            if(collision.gameObject.GetComponent<Rigidbody>() != null)
+                collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         } else {
             Debug.Log("wtf "+ (collision.gameObject.tag));
         }
     }
 
     private void OnTriggerEnter(Collider other) {
-        haveILose = true;
-        //Debug.Log(haveILose);
+        if (other.gameObject.tag == "Goal")
+            haveILose = true;
+        else if (other.gameObject.tag == "Movement")
+            other.gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     private void OnDrawGizmos() {

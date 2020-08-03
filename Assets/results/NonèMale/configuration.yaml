@@ -22,8 +22,8 @@ behaviors:
         strength: 1.0
     init_path: null
     keep_checkpoints: 5
-    checkpoint_interval: 1000000
-    max_steps: 1000000
+    checkpoint_interval: 2000000
+    max_steps: 2000000
     time_horizon: 1000
     summary_freq: 100000
     threaded: true
@@ -52,8 +52,8 @@ behaviors:
         strength: 1.0
     init_path: null
     keep_checkpoints: 5
-    checkpoint_interval: 1000000
-    max_steps: 1000000
+    checkpoint_interval: 2000000
+    max_steps: 2000000
     time_horizon: 64
     summary_freq: 100000
     threaded: true
@@ -69,13 +69,13 @@ engine_settings:
   width: 84
   height: 84
   quality_level: 5
-  time_scale: 20
+  time_scale: 20.0
   target_frame_rate: -1
   capture_frame_rate: 60
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: Test15
+  run_id: 15Test
   initialize_from: null
   load_model: false
   resume: false
