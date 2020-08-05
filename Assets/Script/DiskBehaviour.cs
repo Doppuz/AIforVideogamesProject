@@ -64,8 +64,6 @@ public class DiskBehaviour : MonoBehaviour{
 
             if(collision.gameObject.GetComponent<Rigidbody>() != null)
                 collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        } else {
-            Debug.Log("wtf "+ (collision.gameObject.tag));
         }
     }
 

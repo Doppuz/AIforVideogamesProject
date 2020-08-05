@@ -41,7 +41,7 @@ public class BAgent : Agent{
         hockeyDisk.transform.localPosition = createRandomPosition(false,false);
         float speed = hockeyDisk.GetComponent<DiskBehaviour>().speed;
         //speed = Random.Range(6, 20);
-        hockeyDisk.GetComponent<DiskBehaviour>().speed = speed;
+        //hockeyDisk.GetComponent<DiskBehaviour>().speed = speed;
         Vector3 pos = createRandomPosition(true,false);
         //Debug.Log("Velocity: " + pos);
         child.transform.localPosition = createRandomPosition(false, true); //new Vector3(-0.42f,0,0);//
@@ -52,7 +52,8 @@ public class BAgent : Agent{
 
     public override void CollectObservations(VectorSensor sensor) {
         sensor.AddObservation(hockeyDisk.transform.localPosition);
-        sensor.AddObservation(child.transform.localPosition);
+        sensor.AddObservation(child.transform.localPosition.x);
+        sensor.AddObservation(hockeyDisk.transform.localPosition - child.transform.localPosition);
         //Debug.Log(transform.TransformDirection(diskRB.velocity));
         //Debug.Log("AA "+diskRB.velocity);
         //Debug.Log("CC "+diskRB.transform.position);

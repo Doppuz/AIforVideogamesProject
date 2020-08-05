@@ -82,7 +82,7 @@ PrefabInstance:
     - target: {fileID: 1431058161, guid: 76e9cbc4a10af7e4fb290ff0f96f689e, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 11400000, guid: bddeafceea7eddc41b07eec918adfa93,
+      objectReference: {fileID: 11400000, guid: 5a42f1f717d1c6942a1b71c30c8ddf28,
         type: 3}
     - target: {fileID: 1431058161, guid: 76e9cbc4a10af7e4fb290ff0f96f689e, type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1431058161, guid: 76e9cbc4a10af7e4fb290ff0f96f689e, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1855120756, guid: 76e9cbc4a10af7e4fb290ff0f96f689e, type: 3}
       propertyPath: m_CollisionDetection
@@ -168,7 +168,7 @@ PrefabInstance:
     - target: {fileID: 7534712884452363488, guid: 76e9cbc4a10af7e4fb290ff0f96f689e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.68
+      value: 4.95
       objectReference: {fileID: 0}
     - target: {fileID: 7534712884452363491, guid: 76e9cbc4a10af7e4fb290ff0f96f689e,
         type: 3}
@@ -179,6 +179,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534712885051275123, guid: 76e9cbc4a10af7e4fb290ff0f96f689e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534712885051275123, guid: 76e9cbc4a10af7e4fb290ff0f96f689e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7208147
       objectReference: {fileID: 0}
     - target: {fileID: 7534712885564624038, guid: 76e9cbc4a10af7e4fb290ff0f96f689e,
         type: 3}
