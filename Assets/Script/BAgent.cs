@@ -48,18 +48,21 @@ public class BAgent : Agent{
         diskRB.velocity = new Vector3(0f, 0f, 0f);
         diskRB.AddForce(pos.normalized * speed,
                        ForceMode.VelocityChange);
+
+        Debug.Log(child.transform.localPosition);
     }
 
     public override void CollectObservations(VectorSensor sensor) {
         sensor.AddObservation(hockeyDisk.transform.localPosition);
         sensor.AddObservation(child.transform.localPosition.x);
-        sensor.AddObservation(hockeyDisk.transform.localPosition - child.transform.localPosition);
+        //sensor.AddObservation(hockeyDisk.transform.localPosition - child.transform.localPosition);
         //Debug.Log(transform.TransformDirection(diskRB.velocity));
         //Debug.Log("AA "+diskRB.velocity);
         //Debug.Log("CC "+diskRB.transform.position);
         //Debug.Log("DD "+diskRB.transform.localPosition);
         //sensor.AddObservation(diskRB.velocity.normalized * 22);
         //sensor.AddObservation(diskRB.velocity.normalized);
+        //sensor.AddObservation(diskRB.velocity.magnitude);
         sensor.AddObservation(diskRB.velocity);
     }
 
@@ -92,13 +95,19 @@ public class BAgent : Agent{
     private Vector3 createRandomPosition(bool velocity, bool agent) {
 
         float rndPositionX = Random.Range(-1.53f, 1.53f);
-        float rndPositionZ = Random.Range(-3.282f, 0.5f);
+        float rndPositionZ = Random.Range(-0.5f, 0.5f);
 
         if(agent) 
             return new Vector3(rndPositionX, child.transform.localPosition.y, child.transform.localPosition.z);
         else {
-            if(velocity)
-                rndPositionZ = Random.Range(1.2f, 4.5f);
+            if (velocity) {
+                float rndPositionZ1 = Random.Range(-4f, -1f);
+                float rndPositionZ2 = Random.Range(1f, 4f);
+                if (Random.Range(0, 2) == 0)
+                    rndPositionZ = rndPositionZ1;
+                else
+                    rndPositionZ = rndPositionZ2;
+            }
             return new Vector3(rndPositionX, diskRB.transform.localPosition.y, rndPositionZ);
         }
     }
