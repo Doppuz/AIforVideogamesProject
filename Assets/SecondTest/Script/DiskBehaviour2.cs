@@ -18,7 +18,7 @@ public class DiskBehaviour2 : MonoBehaviour{
         rg = GetComponent<Rigidbody>();
         //destination = agent1.position;
         //rg.velocity = destination.normalized * speed;
-        rg.velocity = Vector3.forward * 8;
+        //rg.velocity = Vector3.forward * 8;
     }
 
     void Update() {

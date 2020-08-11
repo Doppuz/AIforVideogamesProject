@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624122212787723831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.98}
+  m_LocalPosition: {x: 0, y: 0, z: 5.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8192787945835019966}
@@ -100,8 +100,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.340717, y: 1, z: 0.34555358}
-  m_Center: {x: 0.12240614, y: 0, z: 0.002779369}
+  m_Size: {x: 8.340717, y: 1, z: 0.71373564}
+  m_Center: {x: 0.12240614, y: 0, z: 0.0036439102}
 --- !u!114 &1624122213897756375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,6 +860,7 @@ MonoBehaviour:
   MaxStep: 0
   hockeyDisk: {fileID: 8192787945875220594}
   field: {fileID: 8192787945835019967}
+  opponent: {fileID: 8192787946183434859}
   agentSpeed: 13
   training: 1
 --- !u!114 &1811023505413755426
@@ -875,12 +876,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 8
+    VectorObservationSize: 9
     NumStackedVectorObservations: 1
     VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: e471b568fb09dfa45a4ef7d8b6a4b9f3, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior

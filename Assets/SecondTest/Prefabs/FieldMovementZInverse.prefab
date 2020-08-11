@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834323762434204130}
   m_Layer: 0
-  m_Name: FieldMovementZ 1
+  m_Name: FieldMovementZInverse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,6 +485,7 @@ MonoBehaviour:
   MaxStep: 0
   hockeyDisk: {fileID: 834323763547436846}
   field: {fileID: 834323762434204131}
+  opponent: {fileID: 834323763855785271}
   agentSpeed: 13
   training: 1
 --- !u!114 &7135021740446846334
@@ -500,12 +501,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 8
+    VectorObservationSize: 9
     NumStackedVectorObservations: 1
     VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: e471b568fb09dfa45a4ef7d8b6a4b9f3, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior

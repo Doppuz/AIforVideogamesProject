@@ -173,12 +173,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 8
+    VectorObservationSize: 9
     NumStackedVectorObservations: 1
     VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 30cc6bd06cc2ce343a6c093a8f9947bf, type: 3}
+  m_Model: {fileID: 11400000, guid: 680ab482240968c4ead7701a230dda5c, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -202,8 +202,9 @@ MonoBehaviour:
   MaxStep: 0
   hockeyDisk: {fileID: 5125106845592913780}
   field: {fileID: 5125106846425321913}
-  agentSpeed: 18
-  training: 1
+  opponent: {fileID: 5125106845028220071}
+  agentSpeed: 12
+  training: 0
 --- !u!1 &751781933
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,8 +656,9 @@ MonoBehaviour:
   MaxStep: 0
   hockeyDisk: {fileID: 5125106845592913780}
   field: {fileID: 5125106846425321913}
+  opponent: {fileID: 1365589126}
   agentSpeed: 12
-  training: 1
+  training: 0
 --- !u!1 &2312776748744438188
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,12 +816,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 8
+    VectorObservationSize: 9
     NumStackedVectorObservations: 1
     VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: e471b568fb09dfa45a4ef7d8b6a4b9f3, type: 3}
+  m_Model: {fileID: 11400000, guid: 8f5846323de960d46a10bc46c9edb632, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior

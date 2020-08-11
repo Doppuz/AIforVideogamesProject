@@ -7,6 +7,8 @@ public class BAgent2 : Agent{
 
     public GameObject hockeyDisk;
     public GameObject field;
+    public GameObject opponent;
+
     public float agentSpeed = 7f;
     public bool training = true;
 
@@ -28,15 +30,17 @@ public class BAgent2 : Agent{
         diskRB = hockeyDisk.GetComponent<Rigidbody>();
 
         child = transform.GetChild(0).gameObject;
+
+        behindZ = opponent.transform.localPosition.z;
     }
 
     public override void OnEpisodeBegin() {
-        /*if (training) {
-            if(behindZ > 0) 
-                behindGO.transform.localPosition = new Vector3(behindGO.transform.localPosition.x, behindGO.transform.localPosition.y, Random.Range(1f,4.7f));
+        if (training) {
+            if(behindZ > 0)
+                opponent.transform.localPosition = new Vector3(opponent.transform.localPosition.x, opponent.transform.localPosition.y, Random.Range(1.5f,4.7f));
             else
-                behindGO.transform.localPosition = new Vector3(behindGO.transform.localPosition.x, behindGO.transform.localPosition.y, Random.Range(-4.7f, -1f));
-        }*/
+                opponent.transform.localPosition = new Vector3(opponent.transform.localPosition.x, opponent.transform.localPosition.y, Random.Range(-4.7f, -1.5f));
+        }
         hockeyDisk.GetComponent<DiskBehaviour2>().haveILose = false;
         hockeyDisk.transform.localPosition = createRandomPosition(false,false);
         Debug.Log(hockeyDisk.transform.localPosition);
@@ -54,6 +58,7 @@ public class BAgent2 : Agent{
         sensor.AddObservation(child.transform.localPosition.x);
         sensor.AddObservation(child.transform.localPosition.z);
         sensor.AddObservation(diskRB.velocity);
+        sensor.AddObservation(opponent.transform.localPosition.z);
     }
 
     public override void OnActionReceived(float[] vectorAction) {
@@ -78,19 +83,19 @@ public class BAgent2 : Agent{
         float rndPositionZ = Random.Range(-0.5f, 0.5f);
         float rndPositionX = Random.Range(-1.53f, 1.53f);
 
-        /*if (training) {
+        if (training) {
             if (behindZ > 0)
-                rndPositionZ = Random.Range(behindGO.transform.localPosition.z - 2, behindGO.transform.localPosition.z - 0.5f);
+                rndPositionZ = Random.Range(opponent.transform.localPosition.z - 2, opponent.transform.localPosition.z - 0.5f);
             else
-                rndPositionZ = Random.Range(behindGO.transform.localPosition.z + 0.5f, behindGO.transform.localPosition.z + 2);
-        }*/
+                rndPositionZ = Random.Range(opponent.transform.localPosition.z + 0.5f, opponent.transform.localPosition.z + 2);
+        }
 
         if (agent) 
             return new Vector3(rndPositionX, child.transform.localPosition.y, child.transform.localPosition.z);
         else {
             if (velocity) {
-                float rndPositionZ1 = Random.Range(-4f, hockeyDisk.transform.localPosition.z -1f);
-                float rndPositionZ2 = Random.Range(hockeyDisk.transform.localPosition.z + 1f, 4f);
+                float rndPositionZ1 = Random.Range(-4f, opponent.transform.localPosition.z -1.5f);
+                float rndPositionZ2 = Random.Range(opponent.transform.localPosition.z + 1.5f, 4f);
                 if (Random.Range(0, 2) == 0)
                     rndPositionZ = rndPositionZ1;
                 else
