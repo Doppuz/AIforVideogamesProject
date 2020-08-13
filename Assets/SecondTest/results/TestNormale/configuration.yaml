@@ -75,7 +75,7 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: TestNormale2
+  run_id: DaCancellareNormale
   initialize_from: null
   load_model: false
   resume: false

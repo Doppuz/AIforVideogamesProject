@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiddleCollision : MonoBehaviour
-{
+public class MiddleCollision : MonoBehaviour{
+
+    public GameObject disk;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Physics.IgnoreCollision(disk.GetComponent<SphereCollider>(), this.gameObject.GetComponent<BoxCollider>());
     }
 
     // Update is called once per frame
@@ -16,8 +18,5 @@ public class MiddleCollision : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Disk")
-            Physics.IgnoreCollision(collision.collider,this.gameObject.GetComponent<BoxCollider>());
-    }
+
 }

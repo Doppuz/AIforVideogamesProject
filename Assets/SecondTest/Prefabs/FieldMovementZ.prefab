@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624122212787723831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5.05}
+  m_LocalPosition: {x: 0, y: 0, z: 5.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8192787945835019966}
@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cefec7dc1a40c834db001318ce4f4d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disk: {fileID: 8192787945875220594}
 --- !u!1 &1624122213897756330
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cefec7dc1a40c834db001318ce4f4d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disk: {fileID: 8192787945875220594}
 --- !u!1 &8192787944886134832
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +174,7 @@ GameObject:
   - component: {fileID: 8192787945077541503}
   m_Layer: 0
   m_Name: SideLeft
-  m_TagString: Untagged
+  m_TagString: Side
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,6 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  behind: {fileID: 8192787946183434859}
   haveILose: 0
 --- !u!1 &8192787945886567239
 GameObject:
@@ -425,7 +428,7 @@ GameObject:
   - component: {fileID: 8192787945886567241}
   m_Layer: 0
   m_Name: SideRight
-  m_TagString: Untagged
+  m_TagString: Side
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -835,7 +838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8192787946816961516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51, y: 0.58, z: 4.46}
+  m_LocalPosition: {x: -0.51, y: 0.58, z: 4.5}
   m_LocalScale: {x: 2, y: 1, z: 0.8999999}
   m_Children:
   - {fileID: 8192787946434712480}
@@ -876,7 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 9
+    VectorObservationSize: 8
     NumStackedVectorObservations: 1
     VectorActionSize: 02000000
     VectorActionDescriptions: []

@@ -43,12 +43,11 @@ public class BAgent2 : Agent{
         }
         hockeyDisk.GetComponent<DiskBehaviour2>().haveILose = false;
         hockeyDisk.transform.localPosition = createRandomPosition(false,false);
-        Debug.Log(hockeyDisk.transform.localPosition);
         float speed = hockeyDisk.GetComponent<DiskBehaviour2>().speed;
         Vector3 pos = createRandomPosition(true,false);
         child.transform.localPosition = createRandomPosition(false, true);
         diskRB.velocity = new Vector3(0f, 0f, 0f);
-        diskRB.AddForce(pos.normalized * speed,
+        diskRB.AddForce(Vector3.forward * speed,
                        ForceMode.VelocityChange);
         
     }
@@ -58,7 +57,7 @@ public class BAgent2 : Agent{
         sensor.AddObservation(child.transform.localPosition.x);
         sensor.AddObservation(child.transform.localPosition.z);
         sensor.AddObservation(diskRB.velocity);
-        sensor.AddObservation(opponent.transform.localPosition.z);
+        //sensor.AddObservation(opponent.transform.localPosition.z);
     }
 
     public override void OnActionReceived(float[] vectorAction) {
@@ -94,8 +93,8 @@ public class BAgent2 : Agent{
             return new Vector3(rndPositionX, child.transform.localPosition.y, child.transform.localPosition.z);
         else {
             if (velocity) {
-                float rndPositionZ1 = Random.Range(-4f, opponent.transform.localPosition.z -1.5f);
-                float rndPositionZ2 = Random.Range(opponent.transform.localPosition.z + 1.5f, 4f);
+                float rndPositionZ1 = Random.Range(-5f, opponent.transform.localPosition.z -2f);
+                float rndPositionZ2 = Random.Range(opponent.transform.localPosition.z + 2f, 5f);
                 if (Random.Range(0, 2) == 0)
                     rndPositionZ = rndPositionZ1;
                 else
