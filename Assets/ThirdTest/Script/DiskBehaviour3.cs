@@ -25,7 +25,8 @@ public class DiskBehaviour3 : MonoBehaviour{
 
     void Update() {
         
-
+        if (rg.velocity.magnitude < 5)
+            rg.AddForce((rg.velocity.normalized + new Vector3(0.1f,0.1f,0.1f)) * speed);
     }
     
     void FixedUpdate() {
@@ -37,7 +38,6 @@ public class DiskBehaviour3 : MonoBehaviour{
     private void OnCollisionEnter(Collision collision) {
 
     if (collision.gameObject.tag == "Agent") {
-
             //Debug.Log("22 "+rg.isKinematic);
             //rg.isKinematic = true;
             ContactPoint contact = collision.contacts[0];
@@ -56,28 +56,24 @@ public class DiskBehaviour3 : MonoBehaviour{
             //rg.velocity = destination.normalized * 22;
             //rg.velocity = Vector3.Reflect(transform.position,
             //                          collision.contacts[0].normal).normalized * 15;
+            
             rg.velocity = new Vector3(0f, 0f, 0f);
             //rg.isKinematic = false;
             //float z = Random.Range(-4f, +4f);
-            Vector3 destination = Vector3.Reflect(transform.localPosition,
+            Vector3 destination;
+                destination = Vector3.Reflect(transform.localPosition,
                                       collision.contacts[0].normal);
+
             rg.AddForce(destination.normalized * speed,
                        ForceMode.VelocityChange);
 
             if (collision.gameObject.name == "Player" && behind != null) {
                 if (behind.transform.localPosition.z > 0)
-                    behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(1.5f, 4.7f));
+                    behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(-0.8f, 4.7f));
                 else
-                    behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(-4.7f, -1.5f));
+                    behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(-8.5f, -3f));
             }
 
-            if (collision.gameObject.name == "Player") {
-                
-                collision.transform.parent.GetComponent<BAgent3>().SetReward(0.2f);
-            }
-
-            if (collision.gameObject.GetComponent<Rigidbody>() != null)
-                collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         } /*else if (collision.gameObject.tag == "Side") {
             if (lastPosition != Vector3.zero) {
                 if (i == 5) {
@@ -110,8 +106,6 @@ public class DiskBehaviour3 : MonoBehaviour{
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Goal")
             haveILose = true;
-        else if (other.gameObject.tag == "Movement")
-            other.gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     private void OnDrawGizmos() {

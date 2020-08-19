@@ -9,7 +9,7 @@ public class MiddleCollision2 : MonoBehaviour{
     // Start is called before the first frame update
     void Start()
     {
-        Physics.IgnoreCollision(disk.GetComponent<SphereCollider>(), this.gameObject.GetComponent<BoxCollider>());
+        Physics.IgnoreCollision(disk.GetComponent<MeshCollider>(), this.gameObject.GetComponent<BoxCollider>());
     }
 
     // Update is called once per frame

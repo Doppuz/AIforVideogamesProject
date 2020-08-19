@@ -179,17 +179,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: InverseField
       objectReference: {fileID: 0}
+    - target: {fileID: 1848312353395993973, guid: 485c61b7019b9584aa18d9a2c2148929,
+        type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8157755296165490405, guid: 485c61b7019b9584aa18d9a2c2148929,
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 11400000, guid: b41a1626f8ed8ca409197e7bf0172c2f,
+      objectReference: {fileID: 11400000, guid: 2685fff25511943458b4214f4a733a59,
         type: 3}
-    - target: {fileID: 8157755296165490405, guid: 485c61b7019b9584aa18d9a2c2148929,
-        type: 3}
-      propertyPath: m_BrainParameters.VectorObservationSize
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 485c61b7019b9584aa18d9a2c2148929, type: 3}
 --- !u!1 &769874218

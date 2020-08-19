@@ -6,8 +6,8 @@ public class BAgent : Agent{
     [Header("Agent parameter")]
 
     public GameObject hockeyDisk;
-    public GameObject field;
-    public float agentSpeed = 7f;
+
+    public float agentSpeed;
 
     private Rigidbody diskRB;
     private GameObject leftSideGO;
@@ -28,11 +28,6 @@ public class BAgent : Agent{
 
     public override void Initialize() {
         diskRB = hockeyDisk.GetComponent<Rigidbody>();
-
-        leftSideGO = field.transform.Find("SideLeft").gameObject;
-        rightSideGO = field.transform.Find("SideRight").gameObject;
-        planeGO = field.transform.Find("Plane").gameObject;
-        triggerGO = field.transform.Find("OnTriggerGoal").gameObject;
         child = transform.GetChild(0).gameObject;
     }
 
@@ -40,29 +35,17 @@ public class BAgent : Agent{
         hockeyDisk.GetComponent<DiskBehaviour>().haveILose = false;
         hockeyDisk.transform.localPosition = createRandomPosition(false,false);
         float speed = hockeyDisk.GetComponent<DiskBehaviour>().speed;
-        //speed = Random.Range(6, 20);
-        //hockeyDisk.GetComponent<DiskBehaviour>().speed = speed;
+        child.transform.localPosition = createRandomPosition(false, true);
         Vector3 pos = createRandomPosition(true,false);
-        //Debug.Log("Velocity: " + pos);
-        child.transform.localPosition = createRandomPosition(false, true); //new Vector3(-0.42f,0,0);//
         diskRB.velocity = new Vector3(0f, 0f, 0f);
+        print(speed);
         diskRB.AddForce(pos.normalized * speed,
                        ForceMode.VelocityChange);
-
-        Debug.Log(child.transform.localPosition);
     }
 
     public override void CollectObservations(VectorSensor sensor) {
         sensor.AddObservation(hockeyDisk.transform.localPosition);
         sensor.AddObservation(child.transform.localPosition.x);
-        //sensor.AddObservation(hockeyDisk.transform.localPosition - child.transform.localPosition);
-        //Debug.Log(transform.TransformDirection(diskRB.velocity));
-        //Debug.Log("AA "+diskRB.velocity);
-        //Debug.Log("CC "+diskRB.transform.position);
-        //Debug.Log("DD "+diskRB.transform.localPosition);
-        //sensor.AddObservation(diskRB.velocity.normalized * 22);
-        //sensor.AddObservation(diskRB.velocity.normalized);
-        //sensor.AddObservation(diskRB.velocity.magnitude);
         sensor.AddObservation(diskRB.velocity);
     }
 
@@ -70,19 +53,10 @@ public class BAgent : Agent{
         Vector3 destination = new Vector3(Mathf.Clamp(vectorAction[0], -1f, 1f),
             child.transform.localPosition.y, child.transform.localPosition.z);
 
-        //Vector3 destination = new Vector3(vectorAction[0], child.transform.localPosition.y, child.transform.localPosition.z);
-
-        //Vector3 destination = new Vector3(Mathf.Clamp(vectorAction[0], -1.80f - child.transform.localPosition.x, +1.10f - -child.transform.localPosition.x),0,0);
-        //if (!(destination.magnitude < 0.0001f)) {
-        //Vector3 newPosition = child.GetComponent<Rigidbody>().position + child.transform.TransformDirection(destination);
-        //Debug.Log("CC " + child.GetComponent<Rigidbody>().position);
-        //Debug.Log("DD " + destination);
         child.GetComponent<Rigidbody>().velocity = new Vector3(0f,0f,0f);
         child.GetComponent<Rigidbody>().AddForce(destination.normalized * agentSpeed,
                  ForceMode.VelocityChange);
-        //print(destination);
-        //child.GetComponent<Rigidbody>().MovePosition(newPosition);
-        //}
+
 
         if (hockeyDisk.GetComponent<DiskBehaviour>().haveILose == false) {
             SetReward(0.05f);
@@ -101,12 +75,14 @@ public class BAgent : Agent{
             return new Vector3(rndPositionX, child.transform.localPosition.y, child.transform.localPosition.z);
         else {
             if (velocity) {
-                float rndPositionZ1 = Random.Range(-4f, -1f);
-                float rndPositionZ2 = Random.Range(1f, 4f);
+                /*float rndPositionZ1 = Random.Range(-4f, child.transform.localPosition.z - 2f);
+                float rndPositionZ2 = Random.Range(child.transform.localPosition.z  + 2f, 4f);
                 if (Random.Range(0, 2) == 0)
                     rndPositionZ = rndPositionZ1;
                 else
-                    rndPositionZ = rndPositionZ2;
+                    rndPositionZ = rndPositionZ2;*/
+
+                return new Vector3(Random.Range(-1f, 1f), diskRB.transform.localPosition.y, Random.Range(-1f, 1f));
             }
             return new Vector3(rndPositionX, diskRB.transform.localPosition.y, rndPositionZ);
         }

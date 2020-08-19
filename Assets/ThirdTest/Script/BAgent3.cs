@@ -6,7 +6,6 @@ public class BAgent3 : Agent{
     [Header("Agent parameter")]
 
     public GameObject hockeyDisk;
-    public GameObject field;
     public GameObject opponent;
 
     public float agentSpeed = 7f;
@@ -15,7 +14,8 @@ public class BAgent3 : Agent{
     private Rigidbody diskRB;
     private GameObject behindGO;
     private GameObject child;
-    private float behindZ;
+    private float sideBehindInitialPos;
+    private float agentInitialPos;
 
     /*void Update() {
         Debug.Log("Entri?");
@@ -31,21 +31,24 @@ public class BAgent3 : Agent{
 
         child = transform.GetChild(0).gameObject;
 
-        behindZ = opponent.transform.localPosition.z;
+        sideBehindInitialPos = opponent.transform.localPosition.z;
+
+        agentInitialPos = transform.localPosition.z;
     }
 
     public override void OnEpisodeBegin() {
         if (training) {
-            if(behindZ > 0)
-                opponent.transform.localPosition = new Vector3(opponent.transform.localPosition.x, opponent.transform.localPosition.y, Random.Range(1.5f,4.7f));
+            if(sideBehindInitialPos > 0)
+                opponent.transform.localPosition = new Vector3(opponent.transform.localPosition.x, opponent.transform.localPosition.y, Random.Range(-0.8f, 4.7f));
             else
-                opponent.transform.localPosition = new Vector3(opponent.transform.localPosition.x, opponent.transform.localPosition.y, Random.Range(-4.7f, -1.5f));
+                opponent.transform.localPosition = new Vector3(opponent.transform.localPosition.x, opponent.transform.localPosition.y, Random.Range(-8.5f, -3f));
         }
         hockeyDisk.GetComponent<DiskBehaviour3>().haveILose = false;
         hockeyDisk.transform.localPosition = createRandomPosition(false,false);
         float speed = hockeyDisk.GetComponent<DiskBehaviour3>().speed;
         Vector3 pos = createRandomPosition(true,false);
         child.transform.localPosition = createRandomPosition(false, true);
+        child.transform.localPosition = new Vector3(0, 0, -1.63f);
         diskRB.velocity = new Vector3(0f, 0f, 0f);
         diskRB.AddForce(Vector3.forward * speed,
                        ForceMode.VelocityChange);
@@ -69,7 +72,10 @@ public class BAgent3 : Agent{
                  ForceMode.VelocityChange);
 
         if (hockeyDisk.GetComponent<DiskBehaviour3>().haveILose == false) {
-            SetReward(0.03f);
+            //if(hockeyDisk.transform.position.z > child.transform.position.z)
+                SetReward(0.05f);
+            //else
+                //SetReward(-1f);
         } else {
             SetReward(-5f);
             EndEpisode();
@@ -80,20 +86,23 @@ public class BAgent3 : Agent{
 
 
         float rndPositionZ = Random.Range(-0.5f, 0.5f);
-        float rndPositionX = Random.Range(-1.53f, 1.53f);
+        float rndPositionX = Random.Range(-1.3f, 1.3f);
 
         if (training) {
-            if (behindZ > 0)
+            if (sideBehindInitialPos > 0)
                 rndPositionZ = Random.Range(opponent.transform.localPosition.z - 2, opponent.transform.localPosition.z - 0.5f);
             else
                 rndPositionZ = Random.Range(opponent.transform.localPosition.z + 0.5f, opponent.transform.localPosition.z + 2);
         }
 
-        if (agent) 
-            return new Vector3(rndPositionX, child.transform.localPosition.y, child.transform.localPosition.z);
-        else {
+        if (agent) {
+            if(agentInitialPos > 0)
+                return new Vector3(rndPositionX, child.transform.localPosition.y, Random.Range(-3.2f,-1.2f));
+            else
+                return new Vector3(rndPositionX, child.transform.localPosition.y, Random.Range(-13.2f, -11.2f));
+        } else {
             if (velocity) {
-                float rndPositionZ1 = Random.Range(-5f, opponent.transform.localPosition.z -2f);
+                float rndPositionZ1 = Random.Range(-5f, opponent.transform.localPosition.z - 2f);
                 float rndPositionZ2 = Random.Range(opponent.transform.localPosition.z + 2f, 5f);
                 if (Random.Range(0, 2) == 0)
                     rndPositionZ = rndPositionZ1;

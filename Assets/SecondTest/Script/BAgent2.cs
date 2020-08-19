@@ -6,7 +6,6 @@ public class BAgent2 : Agent{
     [Header("Agent parameter")]
 
     public GameObject hockeyDisk;
-    public GameObject field;
     public GameObject opponent;
 
     public float agentSpeed = 7f;
@@ -16,15 +15,6 @@ public class BAgent2 : Agent{
     private GameObject behindGO;
     private GameObject child;
     private float behindZ;
-
-    /*void Update() {
-        Debug.Log("Entri?");
-        //localAgent.GetComponent<Rigidbody>().MovePosition(localAgent.transform.position + Vector3.right * Time.deltaTime);
-    }
-
-    void Start() {
-        Debug.Log("Entri? 2");
-    }*/
 
     public override void Initialize() {
         diskRB = hockeyDisk.GetComponent<Rigidbody>();
@@ -57,7 +47,6 @@ public class BAgent2 : Agent{
         sensor.AddObservation(child.transform.localPosition.x);
         sensor.AddObservation(child.transform.localPosition.z);
         sensor.AddObservation(diskRB.velocity);
-        //sensor.AddObservation(opponent.transform.localPosition.z);
     }
 
     public override void OnActionReceived(float[] vectorAction) {

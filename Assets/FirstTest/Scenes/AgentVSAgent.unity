@@ -404,7 +404,7 @@ MonoBehaviour:
     VectorActionSize: 01000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: e24f6e6d7a9b14b4ea996926574345b2, type: 3}
+  m_Model: {fileID: 11400000, guid: 27f12edcbb3f5d6418a094605e1cc5ba, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -427,7 +427,6 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 5000
   hockeyDisk: {fileID: 7534712885864973534}
-  field: {fileID: 7534712884026003987}
   agentSpeed: 13
 --- !u!114 &1197817488
 MonoBehaviour:
@@ -528,7 +527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006559114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5.06}
+  m_LocalPosition: {x: 0, y: 0, z: -5.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7534712884026003986}
@@ -599,7 +598,7 @@ MonoBehaviour:
     VectorActionSize: 01000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 34371c6d342fa5f4e9d5927aa32ec3cf, type: 3}
+  m_Model: {fileID: 11400000, guid: 27f12edcbb3f5d6418a094605e1cc5ba, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -622,7 +621,6 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 5000
   hockeyDisk: {fileID: 7534712885864973534}
-  field: {fileID: 7534712884026003987}
   agentSpeed: 13
 --- !u!114 &2083080007
 MonoBehaviour:
@@ -878,7 +876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7534712884689798300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.95}
+  m_LocalPosition: {x: 0, y: 0, z: 5.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7534712884026003986}
@@ -1207,7 +1205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82ff533364681f489ab0476f20a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 20
   haveILose: 0
 --- !u!135 &7534712885864973528
 SphereCollider:
