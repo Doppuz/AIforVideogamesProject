@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82ff533364681f489ab0476f20a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
   haveILose: 0
 --- !u!54 &8157755296158303403
 Rigidbody:
@@ -775,7 +775,7 @@ MonoBehaviour:
     VectorActionSize: 01000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: b41a1626f8ed8ca409197e7bf0172c2f, type: 3}
+  m_Model: {fileID: 11400000, guid: 2685fff25511943458b4214f4a733a59, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior

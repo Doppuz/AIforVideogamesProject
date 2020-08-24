@@ -7,6 +7,8 @@ public class DiskBehaviour3 : MonoBehaviour{
     public float speed;
     public GameObject behind;
 
+
+
     private Vector3 direction;
     private Rigidbody rg;
     private Vector3 destination;
@@ -61,17 +63,25 @@ public class DiskBehaviour3 : MonoBehaviour{
             //rg.isKinematic = false;
             //float z = Random.Range(-4f, +4f);
             Vector3 destination;
-                destination = Vector3.Reflect(transform.localPosition,
-                                      collision.contacts[0].normal);
+            destination = Vector3.Reflect(transform.localPosition,
+                      collision.contacts[0].normal);
 
-            rg.AddForce(destination.normalized * speed,
-                       ForceMode.VelocityChange);
+            /*if (destination.z >= 0 && collision.gameObject.name != "Player")
+                destination.z = -destination.z -0.5f;*/
+
+                rg.AddForce((destination.normalized) * speed,
+                       ForceMode.VelocityChange);  
+
+            if (collision.gameObject.name != "Player")
+                print(destination);
+
+            
 
             if (collision.gameObject.name == "Player" && behind != null) {
                 if (behind.transform.localPosition.z > 0)
-                    behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(-0.8f, 4.7f));
+                    behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(4f, 8.5f));
                 else
-                    behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(-8.5f, -3f));
+                    behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(-8.5f, -4f));
             }
 
         } /*else if (collision.gameObject.tag == "Side") {

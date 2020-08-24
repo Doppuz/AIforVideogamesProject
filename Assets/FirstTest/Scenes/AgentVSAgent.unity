@@ -404,7 +404,7 @@ MonoBehaviour:
     VectorActionSize: 01000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 27f12edcbb3f5d6418a094605e1cc5ba, type: 3}
+  m_Model: {fileID: 11400000, guid: a4cd8ac7d58cff84c87e12570163e0e4, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -598,7 +598,7 @@ MonoBehaviour:
     VectorActionSize: 01000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 27f12edcbb3f5d6418a094605e1cc5ba, type: 3}
+  m_Model: {fileID: 11400000, guid: 2685fff25511943458b4214f4a733a59, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
