@@ -273,7 +273,7 @@ PrefabInstance:
     - target: {fileID: 210952612750922764, guid: 1d926017ff3787340b8cf2722c9e3759,
         type: 3}
       propertyPath: m_Name
-      value: NewField Variant with ontriggerMovement
+      value: Field
       objectReference: {fileID: 0}
     - target: {fileID: 210952612750922765, guid: 1d926017ff3787340b8cf2722c9e3759,
         type: 3}
@@ -329,6 +329,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210952612892557952, guid: 1d926017ff3787340b8cf2722c9e3759,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 210952613493700880, guid: 1d926017ff3787340b8cf2722c9e3759,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 210952613493700882, guid: 1d926017ff3787340b8cf2722c9e3759,
+        type: 3}
+      propertyPath: m_TagString
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 210952613985911495, guid: 1d926017ff3787340b8cf2722c9e3759,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 3fe511fac5168254798cb7d3b87b1f4f,
+        type: 2}
+    - target: {fileID: 210952614180882648, guid: 1d926017ff3787340b8cf2722c9e3759,
+        type: 3}
+      propertyPath: m_TagString
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 210952614180882654, guid: 1d926017ff3787340b8cf2722c9e3759,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152406440953522523, guid: 1d926017ff3787340b8cf2722c9e3759,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7673528184666421393, guid: 1d926017ff3787340b8cf2722c9e3759,
         type: 3}

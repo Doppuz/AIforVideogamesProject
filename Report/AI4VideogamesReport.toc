@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Introduction and purpose of the project}{2}{section.1}%
+\contentsline {section}{\numberline {2}Creation of the environment}{3}{section.2}%
+\contentsline {section}{\numberline {3}First agent}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Environment set up.}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Training set up}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}The training}{11}{section.4}%
