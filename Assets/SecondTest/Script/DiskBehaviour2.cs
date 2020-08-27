@@ -6,30 +6,15 @@ public class DiskBehaviour2 : MonoBehaviour{
 
     public float speed;
     public GameObject behind;
-
-    private Vector3 direction;
+    
     private Rigidbody rg;
     private Vector3 destination;
-    private Vector3 normal = Vector3.zero;
-    private Vector3 lastHittedPoint;
-    private Vector3 lastPosition = Vector3.zero;
-    private int i = 0;
+
     public bool haveILose = false;
     
     void Start(){
         rg = GetComponent<Rigidbody>();
     }
-
-    void Update() {
-        
-
-    }
-    
-    void FixedUpdate() {
-
-       
-    }
-    
 
     private void OnCollisionEnter(Collision collision) {
 
@@ -50,7 +35,6 @@ public class DiskBehaviour2 : MonoBehaviour{
                 else
                     behind.transform.localPosition = new Vector3(behind.transform.localPosition.x, behind.transform.localPosition.y, Random.Range(-4.7f, -1.5f));
             }
-
         } 
     }
 
@@ -59,10 +43,4 @@ public class DiskBehaviour2 : MonoBehaviour{
             haveILose = true;
     }
 
-    private void OnDrawGizmos() {
-        /*Gizmos.color = Color.white;
-        Gizmos.DrawLine(transform.position, normal);
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, destination);*/
-    }
 }

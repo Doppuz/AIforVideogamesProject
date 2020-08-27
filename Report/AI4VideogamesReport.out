@@ -3,4 +3,14 @@
 \BOOKMARK [1][-]{section.3}{First agent}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Environment set up.}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{Training set up}{section.3}% 5
-\BOOKMARK [1][-]{section.4}{The training}{}% 6
+\BOOKMARK [2][-]{subsection.3.3}{The training}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Conclusion}{subsection.3.3}% 7
+\BOOKMARK [1][-]{section.4}{Second agent}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Environment set up.}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Training set up}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{The training}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.4}{Conclusion}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Last agent}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Environment set up.}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.2}{Training set up}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.3}{Training}{section.5}% 16

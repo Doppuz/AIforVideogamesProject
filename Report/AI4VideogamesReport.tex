@@ -212,14 +212,14 @@
 		
 	\end{itemize}	
 	
-	\section{The training}
+	\subsection{The training}
 	For the learning i will use the scene \textbf{Test}.
 	
 	\begin{figure}[hbt!]
 		\centering
 		\includegraphics[width= 0.76
 		\textwidth]{images/NormalTraining1.png}
-		\caption{Scene \text{Test} with 96 field prefabs.}
+		\caption{Scene \textbf{Test} with 96 field prefabs.}
 	\end{figure}
 	
 	\newpage
@@ -236,8 +236,175 @@
 	\end{figure}
 	
 	\noindent	
-	As can be seen from above, the learning lasted 1000000 steps.\\
-	The learning works very well and the agent is able to hit the ball every time (Look at the "Fist test training" video in the folder).
-	After the first training i went in panic since i tried to put tu player against. But in this case the one in the opposite position of the training, was not able to catch the ball. First I thought it was my error, but after some trial a think the problem it's just the refernce system. Before 
+	As can be seen from above, the learning lasted 1000000 steps. \\
+	Learning works very well and the agent is able to hit the ball every time (see the video "\textbf{FirstTestTraining}" in the folder). \\
+	After the first training session, I panicked when I tried to play against another agent. In this case, the one in the opposite position of the training could not catch the ball. At first I thought it was my mistake, but after a few tries I think the problem was only in the reference system. If we take for example the output "-1" of the neural network for the normal agent it indicates to go to the left, while for the "inverse" agent it indicates to go right. I suppose that was the problem, but maybe it's something I don't catch.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 1
+		\textwidth]{images/AvsA.png}
+		\caption{Different reference system for the two agents.}
+	\end{figure}
+	
+	\noindent
+	 So, to create the second agent, I did the same training as before with the agent in the opposite position.
+	 \newpage
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 0.76
+		\textwidth]{images/InverseTraining1.png}
+		\caption{Scene \textbf{InverseTest} with 60 field prefabs.}
+	\end{figure}
+	
+	\noindent
+	Now after assign the two brains to the different agents, they could play together without any problems. (see "\textbf{AgentVSAgentTest1}" video).
+	Since I wanted to create only one brain for the two agents, I decide to do a mixed training with half normal field and half inverse field. The results is pretty good and its behaviour it's very similar to the initial brain (see "\textbf{AgentVSAgentSameBrain}" video). Obviously the learning rate it's a little bit slower and it's not as accurate as the normal training, but it's ok.
+	
+	\newpage
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 0.76
+		\textwidth]{images/MixedField.png}
+		\caption{Scene \textbf{MixedTest} with 48 normal field prefabs and 48 inverse field prefabs.}
+	\end{figure}
+
+	\subsubsection{Conclusion}
+	In conclusion, the first experiment went very well and I created an agent that is able to hit the disk every time without any particular problems.
+	
+	\newpage
+	
+	\section{Second agent}
+	
+	The next stage is to create an agent that can move in every four directions. The folder that describes the agent and the environment of this second example is located in \textbf{"Asset/SecondTest"}.
+	
+	\subsection{Environment set up.}
+	
+	Referring to the "\textbf{Normal}" scene, there are some small changes. There is a new empty game object called "\textbf{Middle Field}" with only a box collider to use as a limit for the movement of the player in the center of the field. There is actually a duplicate of the component used to restrict player movement at the bottom of the pitch.
+	
+	 \begin{figure}[hbt!]
+	 	\centering
+	 	\includegraphics[width= 0.59
+	 	\textwidth]{images/MiddleField.png}
+	 	\caption{Gizmos of the box collider of the two new "\textbf{Middle Field}" game object.}
+	 \end{figure}
+	
+	\noindent
+	Also, there is a script attached to the game object whose sole purpose is to ignore the collision for the disk. If I didn't, the disk would stop shortly after the episode started.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 1
+		\textwidth]{images/MiddleCollisionCode.png}
+		\caption{MiddleField's script.}
+	\end{figure}
+	
+	\noindent
+	The second change is in "\textbf{DiskBehaviour2}". The script is very similar to the one in the first test folder, but when the disk collides with the agent, the behind wall is randomly placed in his half court. I think it can help the agent learn better since his opponent can have different \textit{z} coordinates and not stand still in the same position.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 0.82
+		\textwidth]{images/BehindWall.png}
+		\caption{Representation of the different position of the wall.}
+	\end{figure}
+	
+	\noindent
+	The only thing that changes in the script is in the \textbf{OnCollisionEnter} method. It is just an if that checks the position of the wall and adds a random position (the if is needed to also work in the "inverse field" for the training of the second agent).
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 1.25
+		\textwidth]{images/DiskBehaviour2.png}
+		\caption{Code added in the \textbf{OnCollisionEnter} method.3}
+	\end{figure}
+
+	\subsection{Training set up}
+	
+	Also in the training set up there are some small changes in the different method of the agent (script: \textbf{BAgent2}).
+	
+	\begin{itemize}
+		\item \textbf{Initialize}: same as before.
+		
+		\item \textbf{OnEpisodeBegin}: As new there is the "if" to change the position of the behind wall. The "if" is done only if we are using a field with a behind wall, in the other case the "\textbf{training}" variable is set to false.
+		
+		\begin{figure}[hbt!]
+			\centering
+			\includegraphics[width= 1.25
+			\textwidth]{images/OnEpisodeBegin2.png}
+		\end{figure}
+		
+		\item \textbf{CollectObservations}: in addition to the seven observations we sent in the first example, we also send the \textit{z} coordinate of the agent's local position. I tried to give the \textit{z} coordinate of the behind wall local position as an observation, but it was irrelevant to the neural network output, so I took it out.
+		
+		\newpage
+		
+		\begin{figure}[hbt!]
+			\centering
+			\includegraphics[width= 1
+			\textwidth]{images/CollectObservation2.png}
+		\end{figure}
+		
+		\item \textbf{OnActionReceived}: in addition to the float for the \textit{x} coordinate, the agent will receive a float (always clamped beetween -1 and 1) for the \textit{z} coordinate. 
+		
+		\begin{figure}[hbt!]
+			\centering
+			\includegraphics[width= 1
+			\textwidth]{images/OnActionReceived2.png}
+		\end{figure}
+		
+	\end{itemize}	
+	
+	\subsection{The training}
+	The .yaml file used for the training is "\textbf{configuration.yaml}", which is the same file used before but the learning lasts 2000000 steps. That's probably a little too much, but since the training is a bit slower I preferred it that way.
+	As before I created three different agent, the first is the one from the "\textbf{Test}" scene and it's the brain of the agent in the normal position. The second is the one in the inverse position and the third is the one with mixed training.
+	Look at the different video of the agent in the folder.
+	
+	\subsection{Conclusion}
+	Also in the second example went very well and the agent was able to hit the ball moving in all of the different four direction.
+	
+	\section{Last agent}
+	I consider this last agent as an experiment and it's similar to the second example. The folder that describes the agent and the environment of this third example is located in \textbf{"Asset/ThirdTest"}.
+	
+	\subsection{Environment set up.}
+	
+	Different from before is that the pitch is a bit bigger and there is a goal to score at.
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 1
+		\textwidth]{images/NewField.png}
+	\end{figure}
+
+	\noindent
+	In the \textbf{DiskBehaviour3} script, it's the same as before, the only difference  is a check in the update method if the magnitude of the RigidBody velocity is less than 5. If so, it adds a force to the disk. This check is necessary in case the agent attempts to stop the disk in one of the lower side walls (and yes, he will try).
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 1
+		\textwidth]{images/DiskBehaviour3.png}
+	\end{figure}
+
+	\subsection{Training set up}
+	There are no change from the second example.
+	
+	\subsection{Training}
+	I have called this third example as an experiment, because when i tried the learning i was thinking that everything would be ok. Instead the training has some problems. Since the agent have a positive reward if the disk don't reach the goal, during the training he will try to stop the agent in in one of the lower side walls in the two following way:
+	
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 0.49
+		\textwidth]{images/Obstacle1.png}
+	\end{figure}
+
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[width= 0.49
+		\textwidth]{images/Obstacle2.png}
+	\end{figure}
+	
+	\noindent
+	There is also a second problem. In some training sessions the agent stays close to the centre of the pitch in a corner. This is because the disk has less change to go into the goal, which is smaller than before, so agents get a positive learning reward even if it doesn't try to hit the ball.
 	
 \end{document}	

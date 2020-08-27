@@ -12,11 +12,4 @@ public class MiddleCollision : MonoBehaviour{
         Physics.IgnoreCollision(disk.GetComponent<SphereCollider>(), this.gameObject.GetComponent<BoxCollider>());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }

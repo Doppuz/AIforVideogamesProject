@@ -553,7 +553,7 @@ MonoBehaviour:
     VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: e5acea610c7838846be81d427ae71daa, type: 3}
+  m_Model: {fileID: 11400000, guid: 90efc6450b62aad47a28d7ddc2961fd4, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -628,7 +628,7 @@ MonoBehaviour:
     VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 114d0dd7fdb1c37418c6c2227aafd581, type: 3}
+  m_Model: {fileID: 11400000, guid: 90efc6450b62aad47a28d7ddc2961fd4, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -1031,7 +1031,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7996477820311989811}
-  m_Material: {fileID: 13400000, guid: 59a11fae705e87748b820a74eacdec66, type: 2}
+  m_Material: {fileID: 13400000, guid: 3fe511fac5168254798cb7d3b87b1f4f, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
