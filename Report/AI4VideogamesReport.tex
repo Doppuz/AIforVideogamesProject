@@ -56,7 +56,7 @@
 	\newpage
 	
 	\section{Introduction and purpose of the project}
-	The project started with reference to the \textbf{Pong} game, where there are two players whose aim is to hit the ball without being overtaken by it. Starting from this, we decided the purpose of the project, which is to create an agent who can take the place of a player. In short, my goal was to create an agent who would hit the ball every time without missing it.
+	The project started with reference to the \textbf{Pong} game, where there are two players whose aim is to hit the ball without being overtaken by it. Starting from this, I decided the purpose of the project, which is to create an agent who can take the place of a player. In short, my goal was to create an agent who would hit the disk every time without missing it.
 	To solve the problem, the first idea I proposed was a trigonometric solution. Since it wasn't that easy to put into practice, the Teacher suggested to use \textbf{Machine Learning} instead. This is the solution I adopted to the project and in particular I relied on \textbf{TensorFlow} which acts as an intermediary between Unity and Machine learning itself.\\
 	At the end of the project, I created three agents. The first moves only left and right (as in the \textbf{Pong} game), the second agent and the third in each four directions. Since the third was probably not required for the project, I consider it as an experiment I did towards the end.
 	
@@ -97,9 +97,9 @@
 	The folder that describes the agent and the environment of this first example is located in \textbf{"Asset/FistTest"}.
 	
 	\subsection{Environment set up.}
-	Before starting to train the agent, I obviously need to set my field. For the training I will use the \textit{training field} (Figure \ref{lbl:traningField}). The first thought to decide is how to bounce the disk off the walls. Since every wall has a \textit{Collider} and the disk a \textit{RigidBody}, we can let the physics engine do it for us. Obviously I have to help it and have to make some considerations. For example, I don't want friction between the plane and the disk and between the disk and the wall.
+	Before starting to train the agent, I obviously need to set my environment. For the training I will use the \textit{training field} (Figure \ref{lbl:traningField}). The first thing to decide is how to bounce the disk off the walls. Since every wall has a \textit{Collider} and the disk a \textit{RigidBody}, I can let the physics engine do it for me. Obviously I have to help it and have to make some considerations. For example, I don't want friction between the plane and the disk and between the disk and the wall.
 	I also don't want the disk to stop moving after colliding with multiple walls.
-	From this base, I created two different physical materials, each without friction but one with a bounciness equal to 1 and one equal to 0 (I don't want the disk to bounce on the plane). I assigned the first material to the side walls and the second to the floor.
+	From this base, I created two different physic materials, each without friction but one with a bounciness equal to 1 and one equal to 0 (I don't want the disk to bounce on the plane). I assigned the first material to the side walls and the second to the floor.
 	
 	\begin{figure}[hbt!]
 		\centering
@@ -120,7 +120,7 @@
 
 	\noindent
 	Now there is the "hardest" part: how do I make the disk bounce with the agent in a real way?
-	First of all, I can't let the physics engine work because the disk will always behave the same way. I mean, if the ball goes straight through the middle to the agent, the ball will continue to change its Z coordinate but the X would remain the same (or at least, very similar. See figure \ref{lbl:mvmupdown}) and in a nutshell its movement will remain the same.
+	First of all, I can't let this work to the physic engine because the disk will always behave the same way. I mean, if the ball goes straight through the middle to the agent, the ball will continue to change its Z coordinate but the X would remain the same (or at least, very similar. See figure \ref{lbl:mvmupdown}) and in a nutshell its movement will remain the same.
 	My solution is to look for the new destination and then add a force in that direction. For this, I used the Vector3.reflect function, which takes two parameters: in-direction and normal. In short I will calculate a new position that reflects the direction of the ball on the normal of the impact.
 	
 	\newpage
@@ -159,11 +159,11 @@
 	One last thing I forgot to mention, is that this behaviour is attached to the agent but also to the behind wall (figure \ref{lbl:SidePlane}), since in training it simulates a real agent.
 	
 	\subsection{Training set up}
-	Now i am ready to create my agent. As suggested, I create an empty game object as parent of my parallelepiped. Since i wanted to use a \textbf{RigidBody} for the physics and wanted to keep the agent part and the movement divided,  I simply assigned everything about the agent to the parent and the \textbf{RigidBody} and collider to the child.  
+	Now I am ready to create my agent. As suggested, I create an empty game object as parent of my parallelepiped. Since i wanted to use a \textbf{RigidBody} for the physics and wanted to keep the agent part and the movement divided,  I simply assigned everything about the agent to the parent and the \textbf{RigidBody} and collider to the child.  
 	
 	\begin{itemize}
 		\item \textbf{Agent}: Has attached the \textbf{Behavior Parameters}, the \textbf{Decision Requester} and the \textbf{BAgent} (my script).
-		\item \textbf{Player}: It is the son of \textbf{Agent} and has attached the \textbf{Box Collider}, the \textbf{RigidBody} and everything needed for rendering.
+		\item \textbf{Player}: It's the son of \textbf{Agent} and has attached the \textbf{Box Collider}, the \textbf{RigidBody} and everything needed for rendering.
 	\end{itemize}
 	
 	\noindent
@@ -190,8 +190,8 @@
 	
 		The \textbf{createRandomPosition} method, is only an auxiliary method to create the position of the elements based on the parameters. (It's not that interesting so I don't put any photos there, but it's obviously present in the folder).
 		
-		\item \textbf{CollectObservations}: this is quite important and contains seven observations. The first three are the component of the local position of the disk, The fourth is the \textit{x} local position of the agent and the last three are the component of the RigidBody velocity.\\
-		In this part I made some mistake at the beginning, for example I gave the global and not the local position of the elements and this create problems during the training because every prefabs has it's own global position and so the learning didn't go very well. Another mistake (not really a mistake) was providing the agent \textit{y} and \textit{z} components as well (which are fixed) and this only slowed down the training.
+		\item \textbf{CollectObservations}: this is quite important and contains seven observations. The first three are the component of the local position of the disk, The fourth is the \textit{x} local position of the agent and the last three are the components of the RigidBody velocity.\\
+		In this part I made some mistake at the beginning, for example I gave the global and not the local position of the elements and this create problems during the training because every prefabs had it's own global position and so the learning didn't go very well. Another mistake (not really a mistake) was providing the agent \textit{y} and \textit{z} components as well (which are fixed) and this only slowed down the training.
 		
 		\begin{figure}[hbt!]
 			\centering
@@ -238,7 +238,7 @@
 	\noindent	
 	As can be seen from above, the learning lasted 1000000 steps. \\
 	Learning works very well and the agent is able to hit the ball every time (see the video "\textbf{FirstTestTraining}" in the folder). \\
-	After the first training session, I panicked when I tried to play against another agent. In this case, the one in the opposite position of the training could not catch the ball. At first I thought it was my mistake, but after a few tries I think the problem was only in the reference system. If we take for example the output "-1" of the neural network for the normal agent it indicates to go to the left, while for the "inverse" agent it indicates to go right. I suppose that was the problem, but maybe it's something I don't catch.
+	After the first training session, I panicked when I tried to play against another agent. In this case, the one in the opposite position of the training could not catch the ball. At first I thought it was my mistake, but after a few tries, I realized that the problem was only in the reference system. If we take for example the output "1" of the neural network for the normal agent it indicates to go to the left, while for the "inverse" agent it indicates to go right. I suppose that was the problem, but maybe it's something I don't catch.
 	
 	\begin{figure}[hbt!]
 		\centering
@@ -302,7 +302,7 @@
 	\end{figure}
 	
 	\noindent
-	The second change is in "\textbf{DiskBehaviour2}". The script is very similar to the one in the first test folder, but when the disk collides with the agent, the behind wall is randomly placed in his half court. I think it can help the agent learn better since his opponent can have different \textit{z} coordinates and not stand still in the same position.
+	The second change is in "\textbf{DiskBehaviour2}". The script is very similar to the one in the first test folder, but when the disk collides with the agent, the behind wall is randomly placed in his half court. I think it can help the agent learn better as his opponent may have different \textit{z} coordinates and not sit still in the same position.
 	
 	\begin{figure}[hbt!]
 		\centering
@@ -318,7 +318,7 @@
 		\centering
 		\includegraphics[width= 1.25
 		\textwidth]{images/DiskBehaviour2.png}
-		\caption{Code added in the \textbf{OnCollisionEnter} method.3}
+		\caption{Code added in the \textbf{OnCollisionEnter} method.}
 	\end{figure}
 
 	\subsection{Training set up}
@@ -328,7 +328,7 @@
 	\begin{itemize}
 		\item \textbf{Initialize}: same as before.
 		
-		\item \textbf{OnEpisodeBegin}: As new there is the "if" to change the position of the behind wall. The "if" is done only if we are using a field with a behind wall, in the other case the "\textbf{training}" variable is set to false.
+		\item \textbf{OnEpisodeBegin}: As new there is the "if" to change the position of the behind wall. The "if" is done only if we are using a field with a behind wall  (if there is a second agent,I don't need to assign it a random position at the start of every episode), in the other case the "\textbf{training}" variable is set to false.
 		
 		\begin{figure}[hbt!]
 			\centering
@@ -336,9 +336,7 @@
 			\textwidth]{images/OnEpisodeBegin2.png}
 		\end{figure}
 		
-		\item \textbf{CollectObservations}: in addition to the seven observations we sent in the first example, we also send the \textit{z} coordinate of the agent's local position. I tried to give the \textit{z} coordinate of the behind wall local position as an observation, but it was irrelevant to the neural network output, so I took it out.
-		
-		\newpage
+		\item \textbf{CollectObservations}: in addition to the seven observations I sent in the first example, I also send the \textit{z} coordinate of the agent's local position. I tried to give the \textit{z} coordinate of the behind wall local position as an observation, but it was irrelevant to the neural network output, so I took it out.
 		
 		\begin{figure}[hbt!]
 			\centering
@@ -378,7 +376,7 @@
 	\end{figure}
 
 	\noindent
-	In the \textbf{DiskBehaviour3} script, it's the same as before, the only difference  is a check in the update method if the magnitude of the RigidBody velocity is less than 5. If so, it adds a force to the disk. This check is necessary in case the agent attempts to stop the disk in one of the lower side walls (and yes, he will try).
+	The \textbf{DiskBehaviour3} script is the same as before, the only difference  is a check in the update method if the magnitude of the RigidBody velocity is less than 5. If so, it adds a force to the disk. This check is necessary in case the agent attempts to stop the disk in one of the lower side walls (and yes, it will try).
 	
 	\begin{figure}[hbt!]
 		\centering
@@ -390,7 +388,7 @@
 	There are no change from the second example.
 	
 	\subsection{Training}
-	I have called this third example as an experiment, because when i tried the learning i was thinking that everything would be ok. Instead the training has some problems. Since the agent have a positive reward if the disk don't reach the goal, during the training he will try to stop the agent in in one of the lower side walls in the two following way:
+	I have called this third example as an experiment, because when i tried the learning i was thinking that everything would be ok. Instead the training had some problems. Since the agent have a positive reward if the disk don't reach the goal, during the training it will try to stop the disk in in one of the lower side walls in the two following way:
 	
 	\begin{figure}[hbt!]
 		\centering
@@ -406,5 +404,16 @@
 	
 	\noindent
 	There is also a second problem. In some training sessions the agent stays close to the centre of the pitch in a corner. This is because the disk has less change to go into the goal, which is smaller than before, so agents get a positive learning reward even if it doesn't try to hit the ball.
+	After trying the training several times, I got a decent result, but it is not comparable to the one obtained before. I left some videos in the folder and as you can see the agents try more to stop the ball than to defend the goal.
+	I didn't have time to find a good solution, I tried something (very quickly). For example I thought of giving a negative reward not only when the disk enters the goal, but also if it passes the agent. This way the agent would learn to stay behind the disk and attempt to hit it. I try a training like this but it didn't go very well and the agent always tries to stop the disk in the side wall. I probably didn't set up the training in the right way.\\
+	Another solution I thought of was to give a negative reward (and end the episode) if the speed of the disk drops below a certain range, to avoid stopping it.\\
+	Since I didn't have much time, I don't know if they would have been good solutions, but they could have been.
 	
+	\subsection{Conclusion}
+	From this last example, I have learned that a simple problem can mutate in a difficult one just adding some small changes. My training was acceptable but sure it can be obtained more with more complex solution.
+	
+	\newpage
+	
+	\section{Conclusion}
+	From this project I learned how to use Machine Learning in Unity with a simple environment. I noticed that it's not always that easy, as in the last test or in some example in the  \href{https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md}{Ml-agents doc}. However the set up is very quick and easy, and even if you don't know much about it, you can easily learn how to use it. Continuing in this direction, I'm pretty sure this is just the beginning of Machine Learning in video games.
 \end{document}	

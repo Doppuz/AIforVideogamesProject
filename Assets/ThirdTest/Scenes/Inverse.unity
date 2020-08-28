@@ -275,6 +275,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: FieldMovementZInverse
       objectReference: {fileID: 0}
+    - target: {fileID: 4789776044146836690, guid: dc697ea2a428ef74ca2f421e8306a8be,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 3fe511fac5168254798cb7d3b87b1f4f,
+        type: 2}
     - target: {fileID: 6107176395267249250, guid: dc697ea2a428ef74ca2f421e8306a8be,
         type: 3}
       propertyPath: m_Model

@@ -82,12 +82,7 @@ public class BAgent2 : Agent{
             return new Vector3(rndPositionX, child.transform.localPosition.y, child.transform.localPosition.z);
         else {
             if (velocity) {
-                float rndPositionZ1 = Random.Range(-5f, opponent.transform.localPosition.z -2f);
-                float rndPositionZ2 = Random.Range(opponent.transform.localPosition.z + 2f, 5f);
-                if (Random.Range(0, 2) == 0)
-                    rndPositionZ = rndPositionZ1;
-                else
-                    rndPositionZ = rndPositionZ2;
+                return new Vector3(Random.Range(-1f, 1f), diskRB.transform.localPosition.y, Random.Range(-1f, 1f));
             }
             return new Vector3(rndPositionX, diskRB.transform.localPosition.y, rndPositionZ);
         }

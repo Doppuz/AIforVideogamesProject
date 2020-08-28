@@ -412,7 +412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1b626cf449d7948bf4b0be75c50e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
 --- !u!54 &1674432596
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -553,7 +552,7 @@ MonoBehaviour:
     VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 90efc6450b62aad47a28d7ddc2961fd4, type: 3}
+  m_Model: {fileID: 11400000, guid: e5acea610c7838846be81d427ae71daa, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -628,7 +627,7 @@ MonoBehaviour:
     VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
-  m_Model: {fileID: 11400000, guid: 90efc6450b62aad47a28d7ddc2961fd4, type: 3}
+  m_Model: {fileID: 11400000, guid: 114d0dd7fdb1c37418c6c2227aafd581, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: My Behavior
@@ -812,7 +811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1b626cf449d7948bf4b0be75c50e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
 --- !u!1 &7996477818977504316
 GameObject:
   m_ObjectHideFlags: 0

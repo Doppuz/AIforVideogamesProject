@@ -359,7 +359,7 @@ MonoBehaviour:
   MaxStep: 0
   hockeyDisk: {fileID: 2246928433045496719}
   opponent: {fileID: 4610483007760527150}
-  agentSpeed: 20
+  agentSpeed: 15
   training: 0
 --- !u!114 &623384192
 MonoBehaviour:
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   MaxStep: 0
   hockeyDisk: {fileID: 2246928433045496719}
   opponent: {fileID: 623384189}
-  agentSpeed: 20
+  agentSpeed: 15
   training: 0
 --- !u!114 &4270566179589379369
 MonoBehaviour:
@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a6f00a31c55de498ffe44c98dadf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 25
   behind: {fileID: 0}
   haveILose: 0
 --- !u!23 &4588317076614336758
@@ -1611,7 +1611,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2246928433045496719}
-  m_Material: {fileID: 13400000, guid: 59a11fae705e87748b820a74eacdec66, type: 2}
+  m_Material: {fileID: 13400000, guid: 3fe511fac5168254798cb7d3b87b1f4f, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -179,6 +179,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: InverseField
       objectReference: {fileID: 0}
+    - target: {fileID: 1848312353395993976, guid: 485c61b7019b9584aa18d9a2c2148929,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 3fe511fac5168254798cb7d3b87b1f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 485c61b7019b9584aa18d9a2c2148929, type: 3}
 --- !u!1 &769874218
