@@ -359,7 +359,7 @@ MonoBehaviour:
   MaxStep: 0
   hockeyDisk: {fileID: 2246928433045496719}
   opponent: {fileID: 4610483007760527150}
-  agentSpeed: 15
+  agentSpeed: 25
   training: 0
 --- !u!114 &623384192
 MonoBehaviour:
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   MaxStep: 0
   hockeyDisk: {fileID: 2246928433045496719}
   opponent: {fileID: 623384189}
-  agentSpeed: 15
+  agentSpeed: 25
   training: 0
 --- !u!114 &4270566179589379369
 MonoBehaviour:

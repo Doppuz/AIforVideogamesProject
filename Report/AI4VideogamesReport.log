@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.5)  28 AUG 2020 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.5)  28 AUG 2020 17:47
 entering extended mode
 **./AI4VideogamesReport.tex
 (AI4VideogamesReport.tex
@@ -451,60 +451,59 @@ Package pdftex.def Info: images/CollectObservation.png  used on input line 199.
 
 (pdftex.def)             Requested size: 390.0pt x 78.16574pt.
  [10 <./images/OnEpisodeBegin.png> <./images/CollectObservation.png>]
-<images/OnActionReceived.png, id=180, 462.97969pt x 206.27063pt>
+<images/OnActionReceived.png, id=180, 432.11438pt x 204.01219pt>
 File: images/OnActionReceived.png Graphic file (type png)
 <use images/OnActionReceived.png>
 Package pdftex.def Info: images/OnActionReceived.png  used on input line 210.
-(pdftex.def)             Requested size: 390.0pt x 173.75713pt.
+(pdftex.def)             Requested size: 390.0pt x 184.13536pt.
 <images/NormalTraining1.png, id=181, 355.3275pt x 309.40594pt>
 File: images/NormalTraining1.png Graphic file (type png)
 <use images/NormalTraining1.png>
 Package pdftex.def Info: images/NormalTraining1.png  used on input line 221.
 (pdftex.def)             Requested size: 296.39786pt x 258.10045pt.
- [11 <./images/OnActionReceived.png> <./images/NormalTraining1.png>]
-<images/Behaviour.png, id=190, 235.63031pt x 410.2828pt>
+ [11 <./images/OnActionReceived.png>]
+<images/Behaviour.png, id=188, 235.63031pt x 410.2828pt>
 File: images/Behaviour.png Graphic file (type png)
 <use images/Behaviour.png>
 Package pdftex.def Info: images/Behaviour.png  used on input line 234.
 (pdftex.def)             Requested size: 234.00238pt x 407.45209pt.
- [12 <./images/Behaviour.png>]
-<images/AvsA.png, id=198, 963.6pt x 722.7pt>
+<images/AvsA.png, id=189, 963.6pt x 722.7pt>
 File: images/AvsA.png Graphic file (type png)
 <use images/AvsA.png>
 Package pdftex.def Info: images/AvsA.png  used on input line 246.
 (pdftex.def)             Requested size: 390.0pt x 292.4934pt.
- [13 <./images/AvsA.png>]
-<images/InverseTraining1.png, id=205, 362.85562pt x 278.54062pt>
+ [12 <./images/NormalTraining1.png>]
+<images/InverseTraining1.png, id=197, 362.85562pt x 278.54062pt>
 File: images/InverseTraining1.png Graphic file (type png)
 <use images/InverseTraining1.png>
 Package pdftex.def Info: images/InverseTraining1.png  used on input line 257.
 (pdftex.def)             Requested size: 296.39786pt x 227.52924pt.
- [14 <./images/InverseTraining1.png>]
-<images/MixedField.png, id=212, 356.83313pt x 319.1925pt>
+ [13 <./images/Behaviour.png>] [14 <./images/AvsA.png>]
+<images/MixedField.png, id=210, 356.83313pt x 319.1925pt>
 File: images/MixedField.png Graphic file (type png)
 <use images/MixedField.png>
 Package pdftex.def Info: images/MixedField.png  used on input line 270.
 (pdftex.def)             Requested size: 296.39786pt x 265.144pt.
- [15 <./images/MixedField.png>]
-<images/MiddleField.png, id=219, 216.05719pt x 287.57437pt>
+ [15 <./images/InverseTraining1.png>]
+<images/MiddleField.png, id=217, 216.05719pt x 287.57437pt>
 File: images/MiddleField.png Graphic file (type png)
 <use images/MiddleField.png>
 Package pdftex.def Info: images/MiddleField.png  used on input line 290.
 (pdftex.def)             Requested size: 230.09857pt x 306.27542pt.
- [16 <./images/MiddleField.png>]
-<images/MiddleCollisionCode.png, id=226, 650.43pt x 160.34906pt>
+<images/MiddleCollisionCode.png, id=218, 650.43pt x 160.34906pt>
 File: images/MiddleCollisionCode.png Graphic file (type png)
 <use images/MiddleCollisionCode.png>
 Package pdftex.def Info: images/MiddleCollisionCode.png  used on input line 300
 .
 (pdftex.def)             Requested size: 390.0pt x 96.149pt.
-<images/BehindWall.png, id=227, 963.6pt x 722.7pt>
+ [16 <./images/MixedField.png>] [17 <./images/MiddleField.png> <./images/Middle
+CollisionCode.png>]
+<images/BehindWall.png, id=233, 963.6pt x 722.7pt>
 File: images/BehindWall.png Graphic file (type png)
 <use images/BehindWall.png>
 Package pdftex.def Info: images/BehindWall.png  used on input line 310.
 (pdftex.def)             Requested size: 319.80286pt x 239.84811pt.
- [17 <./images/MiddleCollisionCode.png> <./images/BehindWall.png>]
-<images/DiskBehaviour2.png, id=236, 843.90282pt x 88.07906pt>
+<images/DiskBehaviour2.png, id=234, 843.90282pt x 88.07906pt>
 File: images/DiskBehaviour2.png Graphic file (type png)
 <use images/DiskBehaviour2.png>
 Package pdftex.def Info: images/DiskBehaviour2.png  used on input line 320.
@@ -514,7 +513,8 @@ Overfull \hbox (97.5pt too wide) in paragraph at lines 319--321
  [][] 
  []
 
-<images/OnEpisodeBegin2.png, id=237, 898.85812pt x 237.13594pt>
+[18 <./images/BehindWall.png> <./images/DiskBehaviour2.png>]
+<images/OnEpisodeBegin2.png, id=244, 898.85812pt x 237.13594pt>
 File: images/OnEpisodeBegin2.png Graphic file (type png)
 <use images/OnEpisodeBegin2.png>
 Package pdftex.def Info: images/OnEpisodeBegin2.png  used on input line 336.
@@ -524,46 +524,46 @@ Overfull \hbox (97.5pt too wide) in paragraph at lines 335--337
  [][] 
  []
 
-<images/CollectObservation2.png, id=238, 367.3725pt x 85.82062pt>
+<images/CollectObservation2.png, id=245, 367.3725pt x 85.82062pt>
 File: images/CollectObservation2.png Graphic file (type png)
 <use images/CollectObservation2.png>
 Package pdftex.def Info: images/CollectObservation2.png  used on input line 344
 .
 (pdftex.def)             Requested size: 390.0pt x 91.11214pt.
-[18 <./images/DiskBehaviour2.png> <./images/OnEpisodeBegin2.png>]
-<images/OnActionReceived2.png, id=247, 461.47406pt x 206.27063pt>
+<images/OnActionReceived2.png, id=246, 456.20438pt x 207.77625pt>
 File: images/OnActionReceived2.png Graphic file (type png)
 <use images/OnActionReceived2.png>
 Package pdftex.def Info: images/OnActionReceived2.png  used on input line 352.
-(pdftex.def)             Requested size: 390.0pt x 174.32367pt.
- [19 <./images/CollectObservation2.png> <./images/OnActionReceived2.png>]
-<images/NewField.png, id=254, 300.3722pt x 187.45032pt>
+(pdftex.def)             Requested size: 390.0pt x 177.62833pt.
+[19 <./images/OnEpisodeBegin2.png> <./images/CollectObservation2.png>]
+<images/NewField.png, id=253, 300.3722pt x 187.45032pt>
 File: images/NewField.png Graphic file (type png)
 <use images/NewField.png>
 Package pdftex.def Info: images/NewField.png  used on input line 375.
 (pdftex.def)             Requested size: 390.0pt x 243.40506pt.
-<images/DiskBehaviour3.png, id=255, 482.55281pt x 62.48344pt>
+ [20 <./images/OnActionReceived2.png>]
+<images/DiskBehaviour3.png, id=259, 482.55281pt x 62.48344pt>
 File: images/DiskBehaviour3.png Graphic file (type png)
 <use images/DiskBehaviour3.png>
 Package pdftex.def Info: images/DiskBehaviour3.png  used on input line 384.
 (pdftex.def)             Requested size: 390.0pt x 50.5007pt.
- [20 <./images/NewField.png>]
-<images/Obstacle1.png, id=261, 298.86656pt x 175.40532pt>
+ [21 <./images/NewField.png> <./images/DiskBehaviour3.png>]
+<images/Obstacle1.png, id=266, 298.86656pt x 175.40532pt>
 File: images/Obstacle1.png Graphic file (type png)
 <use images/Obstacle1.png>
 Package pdftex.def Info: images/Obstacle1.png  used on input line 396.
 (pdftex.def)             Requested size: 191.10214pt x 112.15997pt.
-<images/Obstacle2.png, id=262, 304.88907pt x 181.42781pt>
+<images/Obstacle2.png, id=267, 304.88907pt x 181.42781pt>
 File: images/Obstacle2.png Graphic file (type png)
 <use images/Obstacle2.png>
 Package pdftex.def Info: images/Obstacle2.png  used on input line 402.
 (pdftex.def)             Requested size: 191.10214pt x 113.72153pt.
- [21 <./images/DiskBehaviour3.png> <./images/Obstacle1.png> <./images/Obstacle2
-.png>] [22]
+ [22 <./images/Obstacle1.png> <./images/Obstacle2.png>] [23]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 419.
- [23]
+ [24]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 419.
- (AI4VideogamesReport.aux)
+
+(AI4VideogamesReport.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 419.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 419.
 Package rerunfilecheck Info: File `AI4VideogamesReport.out' has not changed.
@@ -575,8 +575,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 419.
  ) 
 Here is how much of TeX's memory you used:
- 6339 strings out of 480930
- 101204 string characters out of 2899762
+ 6340 strings out of 480930
+ 101211 string characters out of 2899762
  367379 words of memory out of 3000000
  22013 multiletter control sequences out of 15000+200000
  539806 words of font info for 49 fonts, out of 3000000 for 9000
@@ -589,9 +589,9 @@ s/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/doppu/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/doppu/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/doppu/
 AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on AI4VideogamesReport.pdf (24 pages, 1077965 bytes).
+Output written on AI4VideogamesReport.pdf (25 pages, 1077639 bytes).
 PDF statistics:
- 315 PDF objects out of 1000 (max. 8388607)
- 59 named destinations out of 1000 (max. 500000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
  290 words of extra memory for PDF output out of 10000 (max. 10000000)
 

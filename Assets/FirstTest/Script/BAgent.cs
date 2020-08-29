@@ -39,7 +39,7 @@ public class BAgent : Agent{
             child.transform.localPosition.y, child.transform.localPosition.z);
 
         child.GetComponent<Rigidbody>().velocity = new Vector3(0f,0f,0f);
-        child.GetComponent<Rigidbody>().AddForce(destination.normalized * agentSpeed,
+        child.GetComponent<Rigidbody>().AddForce(destination * agentSpeed,
                  ForceMode.VelocityChange);
 
         if (hockeyDisk.GetComponent<DiskBehaviour>().haveILose == false) {

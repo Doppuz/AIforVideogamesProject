@@ -56,7 +56,7 @@
 	\newpage
 	
 	\section{Introduction and purpose of the project}
-	The project started with reference to the \textbf{Pong} game, where there are two players whose aim is to hit the ball without being overtaken by it. Starting from this, I decided the purpose of the project, which is to create an agent who can take the place of a player. In short, my goal was to create an agent who would hit the disk every time without missing it.
+	The project started with reference to the \textbf{Pong} game, where there are two players whose aim is to hit the disk without being overtaken by it. Starting from this, I decided the purpose of the project, which is to create an agent who can take the place of a player. In short, my goal was to create an agent who would hit the disk every time without missing it.
 	To solve the problem, the first idea I proposed was a trigonometric solution. Since it wasn't that easy to put into practice, the Teacher suggested to use \textbf{Machine Learning} instead. This is the solution I adopted to the project and in particular I relied on \textbf{TensorFlow} which acts as an intermediary between Unity and Machine learning itself.\\
 	At the end of the project, I created three agents. The first moves only left and right (as in the \textbf{Pong} game), the second agent and the third in each four directions. Since the third was probably not required for the project, I consider it as an experiment I did towards the end.
 	
@@ -94,7 +94,7 @@
 	\newpage
 	
 	\section{First agent}
-	The folder that describes the agent and the environment of this first example is located in \textbf{"Asset/FistTest"}.
+	The folder that describes the agent and the environment of this first example is located in \textbf{"Asset/FirstTest"}.
 	
 	\subsection{Environment set up.}
 	Before starting to train the agent, I obviously need to set my environment. For the training I will use the \textit{training field} (Figure \ref{lbl:traningField}). The first thing to decide is how to bounce the disk off the walls. Since every wall has a \textit{Collider} and the disk a \textit{RigidBody}, I can let the physics engine do it for me. Obviously I have to help it and have to make some considerations. For example, I don't want friction between the plane and the disk and between the disk and the wall.
@@ -159,7 +159,7 @@
 	One last thing I forgot to mention, is that this behaviour is attached to the agent but also to the behind wall (figure \ref{lbl:SidePlane}), since in training it simulates a real agent.
 	
 	\subsection{Training set up}
-	Now I am ready to create my agent. As suggested, I create an empty game object as parent of my parallelepiped. Since i wanted to use a \textbf{RigidBody} for the physics and wanted to keep the agent part and the movement divided,  I simply assigned everything about the agent to the parent and the \textbf{RigidBody} and collider to the child.  
+	Now I am ready to create my agent. As suggested, I create an empty game object as parent of my parallelepiped. Since i wanted to use a \textbf{RigidBody} for the physics and wanted to keep the agent part and the movement divided,  I simply assigned everything about the agent to the parent and the \textbf{RigidBody} and the \textbf{Collider} to the child.  
 	
 	\begin{itemize}
 		\item \textbf{Agent}: Has attached the \textbf{Behavior Parameters}, the \textbf{Decision Requester} and the \textbf{BAgent} (my script).
@@ -288,7 +288,7 @@
 	 	\centering
 	 	\includegraphics[width= 0.59
 	 	\textwidth]{images/MiddleField.png}
-	 	\caption{Gizmos of the box collider of the two new "\textbf{Middle Field}" game object.}
+	 	\caption{Gizmos of the box collider of the two new "\textbf{Middle Field}" game objects.}
 	 \end{figure}
 	
 	\noindent
@@ -360,7 +360,7 @@
 	Look at the different video of the agent in the folder.
 	
 	\subsection{Conclusion}
-	Also in the second example went very well and the agent was able to hit the ball moving in all of the different four direction.
+	Also the second example went very well and the agent was able to hit the ball moving in all of the different four direction.
 	
 	\section{Last agent}
 	I consider this last agent as an experiment and it's similar to the second example. The folder that describes the agent and the environment of this third example is located in \textbf{"Asset/ThirdTest"}.
